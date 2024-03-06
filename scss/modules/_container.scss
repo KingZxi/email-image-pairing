@@ -1,0 +1,23 @@
+/*
+
+    Container: 
+
+    Contains most elements, and is used to center the content on the page and change content width
+
+*/
+
+.container {
+  margin: 0 auto;
+  // padding: 0 15px;
+
+  //MQs to expand the container on different screen widths:
+  @include mq((medium)) {
+    width: 750px;
+  }
+  @include mq((large)) {
+    width: 970px;
+  }
+  @include mq((x-large)) {
+    width: 1200px;
+  }
+}

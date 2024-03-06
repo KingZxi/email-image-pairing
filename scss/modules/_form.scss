@@ -1,0 +1,100 @@
+/*
+
+    Form:
+
+    This module targets the form area of the page
+
+*/
+
+.user-area {
+  @include s-e("section") {
+    background-color: map-get($color-map, quianry);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @include s-e("form") {
+    width: 80%;
+    border: 2px solid map-get($color-map, tertiary);
+    border-radius: 10px;
+    background-color: map-get($color-map, quinary);
+    padding: 1rem;
+    // box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 9px 3px 15px rgba(0, 0, 0, 0.1);
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      width: 100%;
+      height: 100%;
+    }
+
+    @include s-e("group") {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    label {
+      font-size: 16px;
+      font-weight: 300;
+      color: map-get($color-map, quaternary);
+    }
+
+    input {
+      //   width: 15rem;
+      height: 2rem;
+      padding-left: 10px;
+      border: 2px solid map-get($color-map, primary);
+      border-radius: 5px;
+    }
+
+    img {
+      width: 17.5rem;
+      height: 17.5rem;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      border: 2px solid lighten(map-get($color-map, quaternary), 15%);
+      border-radius: 5px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .user-area__form__btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 17.5px;
+    }
+
+    button {
+      width: 10rem;
+      height: 2rem;
+      border-radius: 20px;
+      color: map-get($color-map, quinary);
+      background-color: map-get($color-map, primary);
+      border-radius: 5px;
+      border-color: map-get($color-map, primary);
+    }
+
+    .user-area__form__btn-sub {
+      width: 12.5rem;
+      height: 3rem;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    .user-area__form__btn-new {
+      background-color: map-get($color-map, tertiary);
+      border-color: map-get($color-map, tertiary);
+    }
+  }
+}

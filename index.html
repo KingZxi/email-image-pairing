@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assign an image to your email</title>
+    <link rel="stylesheet" href="css/application.css" />
+  </head>
+  <body>
+    <!-- Area for inputting emails and pairing them with image -->
+    <section class="container user-area__section">
+      <div class="user-area__form">
+        <form>
+          <div class="user-area__form__group">
+            <label for="email">Enter your email address:</label>
+            <input
+              class="user-area__form__input"
+              type="email"
+              id="email"
+              name="userEmail"
+              placeholder="yourname@email.co.uk"
+              required
+            />
+          </div>
+          <img
+            class="user-area__form__img"
+            src="https://picsum.photos/200/300"
+          />
+          <div class="user-area__form__btn">
+            <button
+              class="user-area__form__btn-sub"
+              type="submit"
+              name="userSubmit"
+            >
+              Submit Email
+            </button>
+            <button
+              class="user-area__form__btn-new"
+              type="submit"
+              name="userSubmit"
+            >
+              New Image
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="display-area__form">
+        <form class="">
+          <select class="display-area__section__select">
+            <option value="option1">placeholder@outlook.co.uk</option>
+          </select>
+        </form>
+        <img
+          class="display-area__section__img"
+          src="https://picsum.photos/200/300"
+        />
+      </div>
+    </section>
+    <!-- Area for selecting already paired emails -->
+    <!-- <section class="container display-area__section">
+      <div class="display-area__form">
+        <form class="">
+          <select class="display-area__section__select">
+            <option value="option1">placeholder@outlook.co.uk</option>
+            <option value="option2">placeholder@outlook.co.uk</option>
+            <option value="option3">placeholder@outlook.co.uk</option>
+          </select>
+        </form>
+        <img
+          class="display-area__section__img"
+          src="https://picsum.photos/200/300"
+        />
+      </div>
+    </section> -->
+    <script type="module" src="js/submit.js"></script>
+    <script type="module" src="js/display.js"></script>
+  </body>
+</html>

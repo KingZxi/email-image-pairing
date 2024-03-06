@@ -1,0 +1,24 @@
+/*
+
+    Config:
+
+    Stores variables and other things that alter the configuration of the page.
+
+*/
+
+//Colours:
+//https://coolors.co/e3b505-95190c-610345-107e7d-044b7f
+
+$floral-white: #fffcf2;
+$timberwolf: #ccc5b9;
+$black-olive: #403d39;
+$eerie-black: #252422;
+$flame: #eb5e28;
+
+$color-map: (
+  primary: $flame,
+  secondary: $timberwolf,
+  tertiary: $black-olive,
+  quaternary: $eerie-black,
+  quinary: $floral-white,
+);

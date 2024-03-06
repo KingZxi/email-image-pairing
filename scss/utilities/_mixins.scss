@@ -1,0 +1,52 @@
+/*
+
+    Mixins: 
+
+*/
+
+//Clearfix is used for elements to clear their children
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin s-e($element) {
+  &__#{$element} {
+    @content;
+  }
+}
+
+@mixin s-m($modifier) {
+  &__#{$modifier} {
+    @content;
+  }
+}
+
+@mixin mq($break) {
+  @if $break == "small" {
+    @media screen and (min-width: 768px) {
+      @content;
+    }
+  } @else if $break == "medium" {
+    @media screen and (min-width: 992px) {
+      @content;
+    }
+  } @else if $break == "large" {
+    @media screen and (min-width: 1260px) {
+      @content;
+    }
+  } @else if $break == "x-large" {
+    @media screen and (min-width: 1440px) {
+      @content;
+    }
+  }
+}
+
+@mixin mqc($break) {
+  @media screen and (min-width: $break) {
+    @content;
+  }
+}
