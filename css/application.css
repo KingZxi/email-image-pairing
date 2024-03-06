@@ -250,6 +250,10 @@ input {
   padding: 12.5px 50px;
 }
 
+.about__section {
+  border-top: 2px solid black;
+  border-radius: 5px;
+}
 .about__section h1 {
   text-align: center;
 }
