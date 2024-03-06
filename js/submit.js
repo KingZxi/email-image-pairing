@@ -32,14 +32,14 @@ subBtn.addEventListener("click", async function (e) {
 
   if (input.value === "") {
     error.classList.add("show");
-    error.innerHTML = "Please enter an email address";
+    error.innerHTML = "<span>Please enter an email address</span>";
     setTimeout(() => {
       error.classList.remove("show");
     }, 5000);
     return;
   } else if (!emailRegex.test(input.value)) {
     error.classList.add("show");
-    error.innerHTML = "Please enter a valid email address";
+    error.innerHTML = "<span>Please enter a valid email address</span>";
     setTimeout(() => {
       error.classList.remove("show");
     }, 5000);
