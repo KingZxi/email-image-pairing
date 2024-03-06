@@ -17,6 +17,7 @@ Importing each folder
 
 body {
   margin: 0;
+  padding-top: 10px;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -94,7 +95,7 @@ input {
 */
 .user-area__section {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;

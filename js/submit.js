@@ -23,10 +23,14 @@ fetch("https://source.unsplash.com/random/300x200?sig=${Math.random()}")
   });
 
 //Pairing emails with images on button click
-subBtn.addEventListener("click", function (e) {
+subBtn.addEventListener("click", async function (e) {
   e.preventDefault();
   let email = input.value;
   let imgSrc = img.src;
+
+  //Disabling use of buttons until function is complete
+  subBtn.disabled = true;
+  newBtn.disabled = true;
 
   //Add some validation here or before declarations
 
@@ -40,7 +44,7 @@ subBtn.addEventListener("click", function (e) {
   updateDropdown();
 
   //Fetching the data from the API and saving it as a base64 string, this stops it from being overridden by another random image
-  fetch("https://source.unsplash.com/random/300x200?sig=${Math.random()}")
+  await fetch("https://source.unsplash.com/random/300x200?sig=${Math.random()}")
     .then((response) => response.blob())
     .then((blob) => {
       let reader = new FileReader();
@@ -52,6 +56,8 @@ subBtn.addEventListener("click", function (e) {
     });
 
   updateImage();
+  subBtn.disabled = false;
+  newBtn.disabled = false;
 });
 
 //On click, generate a new random image
