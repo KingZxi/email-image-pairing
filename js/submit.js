@@ -7,36 +7,45 @@ let img = document.querySelector(".user-area__form__img");
 let subBtn = document.querySelector(".user-area__form__btn-sub");
 let newBtn = document.querySelector(".user-area__form__btn-new");
 let addBtn = document.querySelector(".user-area__form__btn-add");
+let error = document.querySelector(".user-area__form__error");
 
 //Creating a variable to hold email and img pairs
 let pairs = new Map();
 
 //Fetching a random image from Unsplash
-fetch("https://source.unsplash.com/random/300x200?sig=${Math.random()}")
-  .then((response) => response.blob())
-  .then((blob) => {
-    let reader = new FileReader();
-    reader.readAsDataURL(blob);
-    reader.onloadend = function () {
-      let base64data = reader.result;
-      img.src = base64data;
-    };
-  });
+// fetch("https://source.unsplash.com/random/300x200?sig=${Math.random()}")
+//   .then((response) => response.blob())
+//   .then((blob) => {
+//     let reader = new FileReader();
+//     reader.readAsDataURL(blob);
+//     reader.onloadend = function () {
+//       let base64data = reader.result;
+//       img.src = base64data;
+//     };
+//   });
 
 //Pairing emails with images on button click
 subBtn.addEventListener("click", async function (e) {
+  e.preventDefault();
   //Validaiton
   let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   if (input.value === "") {
-    alert("Please enter an email address");
+    error.classList.add("show");
+    error.innerHTML = "Please enter an email address";
+    setTimeout(() => {
+      error.classList.remove("show");
+    }, 5000);
     return;
   } else if (!emailRegex.test(input.value)) {
-    alert("Please enter a valid email address");
+    error.classList.add("show");
+    error.innerHTML = "Please enter a valid email address";
+    setTimeout(() => {
+      error.classList.remove("show");
+    }, 5000);
     return;
   }
 
-  e.preventDefault();
   let email = input.value;
   let imgSrc = img.src;
 

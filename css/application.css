@@ -136,6 +136,20 @@ input {
   border: 2px solid #eb5e28;
   border-radius: 5px;
 }
+.user-area__form__error {
+  position: relative;
+  color: red;
+  text-align: right;
+  font-size: 0.75rem;
+  opacity: 0;
+  bottom: -10px;
+  left: 0rem;
+  transition: opacity 0.5s ease-in-out, bottom 0.5s ease-in-out;
+}
+.user-area__form .show {
+  bottom: 0;
+  opacity: 1;
+}
 .user-area__form img {
   width: 17.5rem;
   height: 17.5rem;
@@ -145,12 +159,6 @@ input {
   border-radius: 5px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
-.user-area__form .user-area__form__btn {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 17.5px;
-}
 .user-area__form button {
   width: 10rem;
   height: 2rem;
@@ -159,6 +167,12 @@ input {
   background-color: #eb5e28;
   border-radius: 5px;
   border-color: #eb5e28;
+}
+.user-area__form .user-area__form__btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 17.5px;
 }
 .user-area__form .user-area__form__btn-sub {
   width: 12.5rem;

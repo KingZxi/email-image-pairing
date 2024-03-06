@@ -59,6 +59,22 @@
       border-radius: 5px;
     }
 
+    @include s-e("error") {
+      position: relative;
+      color: red;
+      text-align: right;
+      font-size: 0.75rem;
+      opacity: 0;
+      bottom: -10px;
+      left: 0rem;
+      transition: opacity 0.5s ease-in-out, bottom 0.5s ease-in-out;
+    }
+
+    .show {
+      bottom: 0;
+      opacity: 1;
+    }
+
     img {
       width: 17.5rem;
       height: 17.5rem;
@@ -69,13 +85,6 @@
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     }
 
-    .user-area__form__btn {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 17.5px;
-    }
-
     button {
       width: 10rem;
       height: 2rem;
@@ -84,6 +93,13 @@
       background-color: map-get($color-map, primary);
       border-radius: 5px;
       border-color: map-get($color-map, primary);
+    }
+
+    .user-area__form__btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 17.5px;
     }
 
     .user-area__form__btn-sub {
