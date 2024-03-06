@@ -27,8 +27,12 @@ submit.addEventListener("click", function (e) {
   let email = input.value;
   let imgSrc = img.src;
 
-  //Add some validation here or before declarations?
-  pairs.set(email, imgSrc);
+  //Add some validation here or before declarations
+  if (pairs.has(email)) {
+    pairs.get(email).push(imgSrc);
+  } else {
+    pairs.set(email, [imgSrc]);
+  }
   updateDropdown();
 
   fetch("https://source.unsplash.com/random/300x200?sig=${Math.random()}")

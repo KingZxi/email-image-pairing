@@ -18,7 +18,8 @@
   }
 
   @include s-e("form") {
-    width: 80%;
+    min-width: 5rem;
+    max-width: 30rem;
     border: 2px solid map-get($color-map, tertiary);
     border-radius: 10px;
     background-color: map-get($color-map, quinary);

@@ -1,7 +1,7 @@
 import { pairs } from "./submit.js";
 
 //Displaying data based on the selected email
-let dropdown = document.querySelector(".display-area__section__select");
+let dropdown = document.querySelector(".display-area__select");
 let img = "";
 
 function updateDropdown() {
@@ -15,13 +15,22 @@ function updateDropdown() {
 }
 
 function updateImage() {
-  img = pairs.get(`${dropdown.value}`);
-  let imgDisplay = document.querySelector(".display-area__section__img");
-  imgDisplay.src = img;
+  getImg();
+}
+
+function getImg() {
+  let imgArr = pairs.get(`${dropdown.value}`);
+  let imgDisplay = document.querySelector(".display-area__images");
+  imgDisplay.innerHTML = "";
+  for (let i = 0; i < imgArr.length; i++) {
+    let img = document.createElement("img");
+    img.src = imgArr[i];
+    imgDisplay.appendChild(img);
+  }
 }
 
 dropdown.addEventListener("change", function (e) {
   updateImage();
 });
 
-export { updateDropdown, updateImage };
+export { updateDropdown, updateImage, getImg };
