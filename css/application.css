@@ -101,6 +101,12 @@ input {
   justify-content: center;
   align-items: center;
 }
+@media screen and (min-width: 768px) {
+  .user-area__section {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
 .user-area__form {
   min-width: 5rem;
   max-width: 30rem;
@@ -242,6 +248,16 @@ input {
   border: 2px solid #403d39;
   border-radius: 10px;
   padding: 12.5px 50px;
+}
+
+.about__section h1 {
+  text-align: center;
+}
+.about__section ol {
+  list-style-position: inside;
+}
+.about__section ol li {
+  margin-bottom: 5px;
 }
 
 /*# sourceMappingURL=application.css.map */
