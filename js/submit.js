@@ -24,6 +24,17 @@ fetch("https://source.unsplash.com/random/300x200?sig=${Math.random()}")
 
 //Pairing emails with images on button click
 subBtn.addEventListener("click", async function (e) {
+  //Validaiton
+  let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (input.value === "") {
+    alert("Please enter an email address");
+    return;
+  } else if (!emailRegex.test(input.value)) {
+    alert("Please enter a valid email address");
+    return;
+  }
+
   e.preventDefault();
   let email = input.value;
   let imgSrc = img.src;
@@ -31,8 +42,6 @@ subBtn.addEventListener("click", async function (e) {
   //Disabling use of buttons until function is complete
   subBtn.disabled = true;
   newBtn.disabled = true;
-
-  //Add some validation here or before declarations
 
   //If pairs already has an entry under this email, add to an email array, otherwise, create an array
   if (pairs.has(email)) {
