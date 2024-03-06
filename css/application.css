@@ -170,6 +170,10 @@ input {
   background-color: #403d39;
   border-color: #403d39;
 }
+.user-area__form .user-area__form__btn-add {
+  width: 11.25rem;
+  height: 2rem;
+}
 
 /*
 

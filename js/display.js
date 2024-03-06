@@ -45,4 +45,4 @@ dropdown.addEventListener("change", function (e) {
   updateImage();
 });
 
-export { updateDropdown, updateImage, getImg };
+export { updateDropdown, updateImage, getImg, dropdown };

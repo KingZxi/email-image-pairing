@@ -1,4 +1,4 @@
-import { updateDropdown, updateImage } from "./display.js";
+import { updateDropdown, updateImage, dropdown } from "./display.js";
 
 //Selecting elements within the HTML
 let form = document.querySelector(".user-area__form");
@@ -6,6 +6,7 @@ let input = document.querySelector(".user-area__form__input");
 let img = document.querySelector(".user-area__form__img");
 let subBtn = document.querySelector(".user-area__form__btn-sub");
 let newBtn = document.querySelector(".user-area__form__btn-new");
+let addBtn = document.querySelector(".user-area__form__btn-add");
 
 //Creating a variable to hold email and img pairs
 let pairs = new Map();
@@ -41,6 +42,7 @@ subBtn.addEventListener("click", async function (e) {
 
   //Disabling use of buttons until function is complete
   subBtn.disabled = true;
+  addBtn.disabled = true;
   newBtn.disabled = true;
 
   //If pairs already has an entry under this email, add to an email array, otherwise, create an array
@@ -66,6 +68,7 @@ subBtn.addEventListener("click", async function (e) {
 
   updateImage();
   subBtn.disabled = false;
+  addBtn.disabled = false;
   newBtn.disabled = false;
 });
 
@@ -82,6 +85,44 @@ newBtn.addEventListener("click", function (e) {
         img.src = base64data;
       };
     });
+});
+
+addBtn.addEventListener("click", async function (e) {
+  e.preventDefault();
+
+  subBtn.disabled = true;
+  addBtn.disabled = true;
+  newBtn.disabled = true;
+
+  let imgSrc = img.src;
+  if (dropdown.value == "placeholder") {
+    alert("You cannot add an image to the placeholder email");
+    subBtn.disabled = false;
+    addBtn.disabled = false;
+    newBtn.disabled = false;
+    return;
+  }
+  console.log(dropdown.value);
+  pairs.get(dropdown.value).push(imgSrc);
+  updateDropdown();
+
+  e.preventDefault();
+
+  await fetch("https://source.unsplash.com/random/300x200?sig=${Math.random()}")
+    .then((response) => response.blob())
+    .then((blob) => {
+      let reader = new FileReader();
+      reader.readAsDataURL(blob);
+      reader.onloadend = function () {
+        let base64data = reader.result;
+        img.src = base64data;
+      };
+    });
+
+  subBtn.disabled = false;
+  addBtn.disabled = false;
+  newBtn.disabled = false;
+  updateImage();
 });
 
 export { pairs };

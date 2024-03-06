@@ -97,5 +97,10 @@
       background-color: map-get($color-map, tertiary);
       border-color: map-get($color-map, tertiary);
     }
+
+    .user-area__form__btn-add {
+      width: 11.25rem;
+      height: 2rem;
+    }
   }
 }
